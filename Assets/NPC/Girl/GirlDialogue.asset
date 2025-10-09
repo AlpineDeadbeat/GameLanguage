@@ -32,8 +32,17 @@ MonoBehaviour:
     - Yes
     - No
     nextDialogueIndexes: 0200000003000000
+    givesQuest: 
+    isCorrect: 
   - dialogueIndex: 3
     choices:
     - Yes I'm sure!
     - I don't know!
     nextDialogueIndexes: 0400000002000000
+    givesQuest: 
+    isCorrect: 
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
+  enableQuizMode: 1
+  quizRewardGold: 1

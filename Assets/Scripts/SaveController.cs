@@ -66,29 +66,51 @@ public class SaveController : MonoBehaviour
         {
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
-            GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPosition;
+            // Move player
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if (player) player.transform.position = saveData.playerPosition;
 
-            PolygonCollider2D savedMapBoundry = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
-            FindObjectOfType<CinemachineConfiner>().m_BoundingShape2D = savedMapBoundry;
+            // Find boundary collider by name
+            PolygonCollider2D savedMapBoundary = null;
+            var boundaryGO = GameObject.Find(saveData.mapBoundary);
+            if (boundaryGO) savedMapBoundary = boundaryGO.GetComponent<PolygonCollider2D>();
 
-            MapController_Manual.Instance?.HighlightArea(saveData.mapBoundary);
-            MapController_Dynamic.Instance?.GenerateMap(savedMapBoundry);
+            // Set Cinemachine confiner safely (supports Confiner and Confiner2D)
+            var confiner = FindObjectOfType<Cinemachine.CinemachineConfiner>();
+            if (confiner && savedMapBoundary)
+            {
+                confiner.m_BoundingShape2D = savedMapBoundary;
+            }
+            else
+            {
+                var confiner2D = FindObjectOfType<Cinemachine.CinemachineConfiner2D>();
+                if (confiner2D && savedMapBoundary)
+                    confiner2D.m_BoundingShape2D = savedMapBoundary;
+            }
+
+            // Optional: highlight/generate map if boundary found
+            if (savedMapBoundary)
+            {
+                MapController_Manual.Instance?.HighlightArea(saveData.mapBoundary);
+                MapController_Dynamic.Instance?.GenerateMap(savedMapBoundary);
+            }
 
             inventoryController.SetInventoryItems(saveData.inventorySaveData);
             hotbarController.SetHotbarItems(saveData.hotbarSaveData);
 
             LoadChestStates(saveData.chestSaveData);
 
-            QuestController.Instance.LoadQuestProgress(saveData.questProgressData);
-            QuestController.Instance.handinQuestIDs = saveData.handinQuestIDs;
+            if (QuestController.Instance != null)
+            {
+                QuestController.Instance.LoadQuestProgress(saveData.questProgressData);
+                QuestController.Instance.handinQuestIDs = saveData.handinQuestIDs;
+            }
         }
         else
         {
             SaveGame();
-
             inventoryController.SetInventoryItems(new List<InventorySaveData>());
             hotbarController.SetHotbarItems(new List<InventorySaveData>());
-
             MapController_Dynamic.Instance?.GenerateMap();
         }
     }

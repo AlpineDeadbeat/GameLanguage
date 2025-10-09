@@ -1,0 +1,194 @@
+{
+  "questions": [
+    {
+      "id": "greet_001",
+      "prompt": "Translate to Afrikaans: 'Good morning'",
+      "options": [ "Goeie môre", "Goeie aand", "Goeie nag", "Hallo" ],
+      "correctIndex": 0,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 2
+    },
+    {
+      "id": "greet_002",
+      "prompt": "Translate to Afrikaans: 'Good night'",
+      "options": [ "Goeie nag", "Goeie middag", "Totsiens", "Lekker dag" ],
+      "correctIndex": 0,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 2
+    },
+    {
+      "id": "food_001",
+      "prompt": "What is 'apple' in Afrikaans?",
+      "options": [ "Pampoen", "Appel", "Pynappel", "Peer" ],
+      "correctIndex": 1,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 3
+    },
+    {
+      "id": "food_002",
+      "prompt": "Translate to Afrikaans: 'bread'",
+      "options": [ "Brood", "Kaas", "Sop", "Melk" ],
+      "correctIndex": 0,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 3
+    },
+    {
+      "id": "color_001",
+      "prompt": "Which of these means 'red' in Afrikaans?",
+      "options": [ "Blou", "Rooi", "Groen", "Geel" ],
+      "correctIndex": 1,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 2
+    },
+    {
+      "id": "color_002",
+      "prompt": "Translate to Afrikaans: 'yellow'",
+      "options": [ "Rooi", "Groen", "Geel", "Swart" ],
+      "correctIndex": 2,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 2
+    },
+    {
+      "id": "animal_001",
+      "prompt": "What is 'dog' in Afrikaans?",
+      "options": [ "Kat", "Perd", "Hond", "Vark" ],
+      "correctIndex": 2,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 3
+    },
+    {
+      "id": "animal_002",
+      "prompt": "What is 'bird' in Afrikaans?",
+      "options": [ "Vis", "Voël", "Skaap", "Koek" ],
+      "correctIndex": 1,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 3
+    },
+    {
+      "id": "phrase_001",
+      "prompt": "Translate to Afrikaans: 'How are you?'",
+      "options": [ "Hoe gaan dit?", "Wat maak jy?", "Wie is jy?", "Waar is jy?" ],
+      "correctIndex": 0,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 4
+    },
+    {
+      "id": "phrase_002",
+      "prompt": "Translate to Afrikaans: 'I am fine, thank you'",
+      "options": [ "Ek is goed, dankie", "Ek is bly om jou te sien", "Ek is moeg", "Dankie vir jou" ],
+      "correctIndex": 0,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 4
+    },
+    {
+      "id": "verb_001",
+      "prompt": "Choose the correct Afrikaans word for 'to eat'",
+      "options": [ "Drink", "Eet", "Slaap", "Loop" ],
+      "correctIndex": 1,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 3
+    },
+    {
+      "id": "verb_002",
+      "prompt": "Choose the correct Afrikaans word for 'to sleep'",
+      "options": [ "Slaap", "Skryf", "Lees", "Eet" ],
+      "correctIndex": 0,
+      "difficulty": "A1",
+      "type": "MCQ",
+      "rewardGold": 3
+    },
+    {
+      "id": "sentence_001",
+      "prompt": "Which Afrikaans sentence means 'I like apples'?",
+      "options": [
+        "Ek hou van appels",
+        "Ek eet 'n appel",
+        "Ek sien 'n appel",
+        "Appels is rooi"
+      ],
+      "correctIndex": 0,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 4
+    },
+    {
+      "id": "sentence_002",
+      "prompt": "Which Afrikaans sentence means 'We go to school'?",
+      "options": [
+        "Ons gaan skool toe",
+        "Ek hou van skool",
+        "Hulle lees in die skool",
+        "Sy skryf by die lessenaar"
+      ],
+      "correctIndex": 0,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 4
+    },
+    {
+      "id": "time_001",
+      "prompt": "Translate to Afrikaans: 'What time is it?'",
+      "options": [ "Hoe laat is dit?", "Wanneer is dit?", "Waar is dit?", "Wie is dit?" ],
+      "correctIndex": 0,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 4
+    },
+    {
+      "id": "adj_001",
+      "prompt": "What is 'beautiful' in Afrikaans?",
+      "options": [ "Lelik", "Mooi", "Swaar", "Klein" ],
+      "correctIndex": 1,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 4
+    },
+    {
+      "id": "adj_002",
+      "prompt": "What is 'cold' in Afrikaans?",
+      "options": [ "Warm", "Koud", "Nat", "Droog" ],
+      "correctIndex": 1,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 4
+    },
+    {
+      "id": "weather_001",
+      "prompt": "Translate to Afrikaans: 'It is raining'",
+      "options": [ "Dit sneeu", "Dit reën", "Dit is warm", "Dit is koud" ],
+      "correctIndex": 1,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 4
+    },
+    {
+      "id": "weather_002",
+      "prompt": "Translate to Afrikaans: 'The sun is shining'",
+      "options": [ "Die son skyn", "Dit is donker", "Dit reën baie", "Die maan is vol" ],
+      "correctIndex": 0,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 4
+    },
+    {
+      "id": "bonus_001",
+      "prompt": "Translate to Afrikaans: 'Thank you very much'",
+      "options": [ "Baie dankie", "Tot siens", "Goeie dag", "Asseblief" ],
+      "correctIndex": 0,
+      "difficulty": "A2",
+      "type": "MCQ",
+      "rewardGold": 5
+    }
+  ]
+}

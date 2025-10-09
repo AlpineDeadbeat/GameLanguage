@@ -2,9 +2,10 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - Item
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -60,3 +61,5 @@ TagManager:
   - name: Decor
     uniqueID: 2283123301
     locked: 0
+  m_RenderingLayers:
+  - Default

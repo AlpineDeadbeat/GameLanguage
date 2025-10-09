@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "TopDownTemplate",
     "maps": [
         {
@@ -19,6 +20,15 @@
                     "type": "Button",
                     "id": "2849e46e-e0df-4aba-949f-e1f4ac102b29",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "e79d8cb3-4453-4e5e-a0ce-957c3b978516",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -176,6 +186,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9c5db62-2ab8-4355-9d9e-d5b7b3d69855",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

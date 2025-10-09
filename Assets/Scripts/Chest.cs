@@ -26,7 +26,7 @@ public class Chest : MonoBehaviour, IInteractable
         OpenChest();
     }
 
-    private void OpenChest()
+    public void OpenChest()
     {
         SetOpened(true);
         SoundEffectManager.Play("Chest");

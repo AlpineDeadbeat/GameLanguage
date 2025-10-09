@@ -1,36 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InteractionDetector : MonoBehaviour
 {
-    private IInteractable interactableInRange = null; //Closest Interactable
+    private IInteractable interactableInRange = null; // Closest Interactable
     public GameObject interactionIcon;
 
     void Start()
     {
-        interactionIcon.SetActive(false);
+        if (interactionIcon != null) interactionIcon.SetActive(false);
     }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        // Only act on "performed" (not started/canceled)
+        if (!context.performed) return;
+
+        // Safely ignore if nothing is in range
+        if (interactableInRange == null) return;
+
+        try
         {
-            interactableInRange?.Interact();
-            if (!interactableInRange.CanInteract())
-            {
-                interactionIcon.SetActive(false);
-            }
+            interactableInRange.Interact();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogException(e, this);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent(out IInteractable interactable) && interactable.CanInteract())
+        if (collision.TryGetComponent(out IInteractable interactable))
         {
             interactableInRange = interactable;
-            interactionIcon.SetActive(true);
+            if (interactionIcon != null) interactionIcon.SetActive(true);
         }
     }
 
@@ -39,7 +43,7 @@ public class InteractionDetector : MonoBehaviour
         if (collision.TryGetComponent(out IInteractable interactable) && interactable == interactableInRange)
         {
             interactableInRange = null;
-            interactionIcon.SetActive(false);
+            if (interactionIcon != null) interactionIcon.SetActive(false);
         }
     }
 }

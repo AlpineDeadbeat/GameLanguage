@@ -14,6 +14,9 @@ public class DialogueController : MonoBehaviour
     public Transform choiceContainer;
     public GameObject choiceButtonPrefab;
 
+    // NEW: notify listeners when the panel is closed
+    public System.Action onClosed;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -23,6 +26,35 @@ public class DialogueController : MonoBehaviour
     public void ShowDialogueUI(bool show)
     {
         dialoguePanel.SetActive(show); //Toggle UI visability
+    }
+
+    public void EnsureVisible()
+    {
+        if (dialoguePanel == null) return;
+        dialoguePanel.SetActive(true);
+
+        // Optional: handle CanvasGroup transparency
+        var cg = dialoguePanel.GetComponent<CanvasGroup>();
+        if (cg != null)
+        {
+            cg.alpha = 1f;
+            cg.interactable = true;
+            cg.blocksRaycasts = true;
+        }
+
+        // Prevent accidental scale hiding
+        dialoguePanel.transform.localScale = Vector3.one;
+    }
+
+    // NEW: call this from your Close/X button instead of just hiding the panel
+    public void Close()
+    {
+        // standard cleanup
+        ShowDialogueUI(false);
+        SetDialogueText(string.Empty);
+        ClearChoices();
+        // notify NPC (and anyone else) that the dialogue ended
+        onClosed?.Invoke();
     }
 
     public void SetNPCInfo(string npcName, Sprite portrait)
